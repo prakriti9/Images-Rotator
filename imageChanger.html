@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="imageChanger.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" integrity="sha512-PgQMlq+nqFLV4ylk1gwUOgm6CtIIXkKwaIHp/PAIWHzig/lKZSEGKEysh0TCVbHJXCLN7WetD8TFecIky75ZfQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Image Slider</title>
+</head>
+<body>
+    <div class="main_container">
+        <div class="main_block">
+
+            <h2 id="heading">Forest Area</h2>
+            <div class="img_container">
+                <img src="land1.jpg" alt="" name="slide">
+            </div>
+            <!-- <div class="img_controls">
+                <button onclick="previous()"><i class="fas fa-backward" title="Previous" id="prev"></i></button>
+                
+                <button onclick="next"><i class="fas fa-forward" title="Next" id="next"></i></button>
+            </div> -->
+
+        </div>
+    </div>
+
+    <!-- <script src="imageChanger.js"></script> -->
+    <script>
+        
+
+        let image = ['land1.jpg', 'land2.jpg', 'land3.jpg', 'land4.jpg'];
+
+        i = 0;
+       
+        function changeImg()
+        {
+            document.slide.src = image[i];
+            if(i < image.length - 1)
+            {
+                i++;
+            }
+            else{
+                i= 0;
+            }
+            setTimeout("changeImg()" , 3000);
+        }
+        window.onload = changeImg();
+    </script>
+</body>
+</html>
